@@ -1,0 +1,10 @@
+{
+  "employee": {
+    "id": 1,
+    "name": "aakarsh s",
+    "city": "Hyd",
+    "email": "aakarshranjan@gmail.com",
+    "manager": "girlfriend",
+    "role": "admin"
+  }
+}
