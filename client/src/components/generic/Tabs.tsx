@@ -4,8 +4,12 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { TabContent } from "../../utils/config";
 
-function getComponent(tabId: number, drawerId: number) {
-  const Comp = TabContent(drawerId, tabId);
+function getComponent(
+  tabId: number,
+  drawerId: number,
+  selectedNestedTabId: number
+) {
+  const Comp = TabContent(tabId, drawerId, selectedNestedTabId);
   return <Comp />;
 }
 
@@ -42,6 +46,7 @@ export default function BasicTabs({
   currentTabList,
   selectedDrawerId,
   selectedTabId,
+  selectedNestedTabId,
   handleChange,
 }: {
   currentTabList: {
@@ -50,12 +55,16 @@ export default function BasicTabs({
   }[];
   selectedDrawerId: number;
   selectedTabId: number;
+  selectedNestedTabId: number;
   handleChange: (e: React.SyntheticEvent, value: number) => void;
 }) {
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Tabs value={selectedTabId} onChange={handleChange}>
+        <Tabs
+          value={selectedNestedTabId ?? selectedTabId}
+          onChange={handleChange}
+        >
           {currentTabList.map((tab) => (
             <Tab
               key={tab.id}
@@ -68,7 +77,7 @@ export default function BasicTabs({
       </Box>
       {currentTabList.map((tab) => (
         <TabPanel key={tab.id} value={selectedTabId} index={tab.id}>
-          {getComponent(selectedTabId, selectedDrawerId)}
+          {getComponent(selectedTabId, selectedDrawerId, selectedNestedTabId)}
         </TabPanel>
       ))}
     </Box>
