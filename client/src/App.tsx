@@ -5,7 +5,7 @@ import Login from "./components/views/Login";
 import LandingWrapper from "./components/views/LandingWrapper";
 import Drawer from "./components/generic/Drawer";
 import { appReducerStateType } from "./reducer/appReducer";
-import { toggleLoginStatusAction } from "./actions/appActions";
+import { initiateLoginEmployeeAction } from "./actions/appActions";
 import { Action } from "redux";
 import { styled } from "@mui/material/styles";
 
@@ -68,17 +68,17 @@ const Content = styled(Box, {
 
 const App = ({
   isLoggedIn,
-  toggleLoginStatusAction,
+  initiateLoginEmployeeAction,
   isDrawerOpen,
 }: {
   isLoggedIn: boolean;
-  toggleLoginStatusAction: () => {};
+  initiateLoginEmployeeAction: () => {};
   isDrawerOpen: boolean;
 }) => {
   return (
     <div>
       {!isLoggedIn ? (
-        <Login toggleLoginStatusAction={toggleLoginStatusAction} />
+        <Login initiateLoginEmployeeAction={initiateLoginEmployeeAction} />
       ) : (
         <React.Fragment>
           <Drawer />
@@ -97,7 +97,7 @@ const mapStateToProps = ({ app }: { app: appReducerStateType }) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({
-  toggleLoginStatusAction: () => dispatch(toggleLoginStatusAction()),
+  initiateLoginEmployeeAction: () => dispatch(initiateLoginEmployeeAction()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

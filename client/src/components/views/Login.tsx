@@ -1,10 +1,10 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-const Login = ({ toggleLoginStatusAction }) => {
+const Login = ({ initiateLoginEmployeeAction }) => {
   return (
     <div>
-      <Button onClick={toggleLoginStatusAction}>Login</Button>
+      <Button onClick={initiateLoginEmployeeAction}>Login</Button>
     </div>
   );
 };

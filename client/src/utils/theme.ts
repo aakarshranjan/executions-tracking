@@ -73,5 +73,23 @@ export const theme = responsiveFontSizes(
         xs: "25vw",
       },
     },
+    components: {
+      // MuiTypography: {
+      //   styleOverrides: {
+      //     root: ({ theme }) =>
+      //       theme.unstable_sx({
+      //         color: "white",
+      //       }),
+      //   },
+      // },
+      MuiTab: {
+        styleOverrides: {
+          root: ({ theme }) =>
+            theme.unstable_sx({
+              color: "white",
+            }),
+        },
+      },
+    },
   })
 );

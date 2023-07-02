@@ -1,14 +1,9 @@
 export type DefaultAction = {
-  type: "TOGGLE_DRAWER" | "TOGGLE_LOGIN_STATUS";
+  type: "TOGGLE_DRAWER" | "TOGGLE_LOGIN_STATUS" | "LOGIN_EMPLOYEE";
 };
 
 export type ActionWithPrimitivePayload = {
   type: "SELECT_DRAWER_ITEM" | "SELECT_TAB" | "SELECT_PLAYBOOK_TAB";
-  payload: number;
-};
-
-export type ActionWithPayload = {
-  type: "SELECT_DRAWER_ITEM";
   payload: number;
 };
 
@@ -33,4 +28,8 @@ export const selectPlaybookTabAction = (id: number) => ({
 
 export const toggleLoginStatusAction = () => ({
   type: "TOGGLE_LOGIN_STATUS",
+});
+
+export const initiateLoginEmployeeAction = () => ({
+  type: "LOGIN_EMPLOYEE",
 });

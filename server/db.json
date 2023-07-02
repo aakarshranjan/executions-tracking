@@ -6,5 +6,23 @@
     "email": "aakarshranjan@gmail.com",
     "manager": "girlfriend",
     "role": "admin"
-  }
+  },
+
+  "plays": [
+    { "id": "1", "displayName": "Play 1" },
+    { "id": "2", "displayName": "Play 2" },
+    { "id": "3", "displayName": "Play 3" }
+  ],
+
+  "fields": [
+    {
+      "id": "1",
+      "displayName": "Field 1",
+      "fieldName": "field1",
+      "fieldType": {
+        "id": "1",
+        "name": "TextField"
+      }
+    }
+  ]
 }

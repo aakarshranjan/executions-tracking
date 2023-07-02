@@ -26,6 +26,7 @@ const LandingWrapper = ({
         currentTabList={drawerTabMap[selectedDrawerId]}
         selectedDrawerId={selectedDrawerId}
         selectedTabId={selectedTabId}
+        selectedNestedTabId={null}
         handleChange={handleChange}
       />
     </Box>
