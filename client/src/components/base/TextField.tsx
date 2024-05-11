@@ -1,6 +1,19 @@
 import React from "react";
 import { TextField as MuiTextField } from "@mui/material";
 
+type TextFieldPropType = {
+  value?: string;
+  name?: string;
+  onChange?: () => {};
+  disabled?: boolean;
+  label?: string;
+  width?: string;
+  error?: boolean;
+  size?: 'medium'
+  | 'small',
+  type?: string,
+}
+
 const TextField = ({
   value,
   name,
@@ -11,7 +24,7 @@ const TextField = ({
   error,
   size,
   type,
-}) => {
+} : TextFieldPropType) => {
   return (
     <MuiTextField
       name={name}
@@ -25,6 +38,9 @@ const TextField = ({
       size={size}
       label={label}
       sx={{ width }}
+      InputProps={{
+        "role": "mui-textfield"
+      }}
     />
   );
 };

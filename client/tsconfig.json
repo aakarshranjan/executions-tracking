@@ -5,9 +5,10 @@
     // "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true //TODO: check this flag
-  }
+    "allowSyntheticDefaultImports": true, //TODO: check this flag
+  },
+  "include": ["src", "src/types/jest-dom.d.ts"],
 }
